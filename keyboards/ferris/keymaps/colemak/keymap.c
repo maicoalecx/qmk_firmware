@@ -243,7 +243,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LT(SYL,KC_Y):
         case LSFT_T(KC_P):
         case RSFT_T(KC_L):
-            return 130;
+            return 155;
+        case LGUI_T(KC_A):
+        case LGUI_T(KC_O):
+            return 220;
         default:
             return TAPPING_TERM;
     }
