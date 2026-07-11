@@ -147,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR,
         MS_BTN4, MS_BTN2, MS_BTN1, MS_BTN5, KC_TRNS,     KC_TRNS, MS_LEFT, MS_UP,   MS_DOWN, MS_RGHT,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, MS_BTN4, MS_BTN1, MS_BTN2, MS_BTN5,
-                                   KC_TRNS, KC_TRNS,     KC_TRNS,   KC_TRNS
+                                   KC_TRNS, KC_TRNS,     KC_TRNS, KC_TRNS
     ),
 
     [MED] = LAYOUT_split_3x5_2(
@@ -254,22 +254,24 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t *record, uint16_t prev_keycode) {
     switch (keycode) {
-        case RALT_T(KC_Q):
         case LT(SYR,KC_W):
-        case LCTL_T(KC_F):
-        case LSFT_T(KC_P):
-        case RSFT_T(KC_L):
-        case LCTL_T(KC_U):
         case LT(SYL,KC_Y):
-        case RALT_T(KC_SCLN):
-        case LGUI_T(KC_A):
-        case LALT_T(KC_R):
         case LT(NUM,KC_S):
         case LT(NAV,KC_T):
         case LT(SYM,KC_N):
         case LT(FUN,KC_E):
+            return 10;
+        case RALT_T(KC_Q):
+        case RALT_T(KC_SCLN):
+        case LALT_T(KC_R):
         case LALT_T(KC_I):
+        case LCTL_T(KC_F):
+        case LCTL_T(KC_U):
         case LGUI_T(KC_O):
+        case LGUI_T(KC_A):
+        case LSFT_T(KC_P):
+        case RSFT_T(KC_L):
+            return 5;
         case LSFT_T(KC_ENT):
         case LALT_T(KC_ENT):
         case LCTL_T(KC_ENT):
